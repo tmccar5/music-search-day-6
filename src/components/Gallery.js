@@ -6,17 +6,19 @@ const Gallery = () => {
     const data = useContext(DataContext)
     console.log('Data in gallery!!', data)
 
-    const display = data.map((item, index) => {
+   if(data){
+     const display = data.map((item, index) => {
         return (
             <GalleryItem key={index} item={item} />
         )
     })
 
     return (
-        <div>
+        <div style={{'display':'flex','flexFlow':'wrap','gap':'15px','padding':'20px'}}>
             {display}
         </div>
     )
+   }
 }
 
 export default Gallery
